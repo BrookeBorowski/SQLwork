@@ -1,0 +1,30 @@
+create table Employee(
+employee_id int primary key,
+employee_firstname varchar(30),
+employee_lastname varchar(40),
+employee_email varchar(50),
+employee_salary int
+);
+
+
+insert into employee values(1,'James','Doe','JDoe@abc.com',1000);
+insert into employee values(2,'Jane','Lane','JLane@abc.com',1050);
+insert into employee values(3,'Michelle','Kates','MKates@abc.com',2000);
+insert into employee values(4,'Brian','Driver','BDriver@abc.com',2010);
+insert into employee values(5,'Mary','Cade','MCade@abc.com',2000);
+
+select * from employee;
+
+update employee set employee_salary = 3000 where employee_id = 5;
+update employee set employee_id = 8 where employee_firstname = 'Jane';
+
+delete from employee where employee_id = 1;
+delete from employee where employee_salary = 3000;
+
+select * from employee where employee_lastname like '%e';
+select employee_firstname, employee_lastname from employee;
+
+alter table employee rename column employee_salary to salary; 
+alter table employee add column address varchar(50);
+
+drop table employee; 
